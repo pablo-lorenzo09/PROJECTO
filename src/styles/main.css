@@ -2,8 +2,8 @@
     /* coloquei a cor no background*/
     background-color: rgb(252, 252, 252);
     display: flex;
-    justify-content: space-between;   /**/
-    align-items: center;
+    justify-content: space-between;   /*alinhando eles em distacia igual*/
+    align-items: center; /*pondo no centro*/
     padding: 20px;
 
 }
@@ -214,6 +214,7 @@
   display: flex; 
   justify-content: center;
   gap: 20px;
+  flex-wrap: wrap;
   
 }
 
