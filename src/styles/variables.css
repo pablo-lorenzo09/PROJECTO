@@ -1,0 +1,32 @@
+:root{
+    /* cores header */
+    --header__container-color: rgb(252, 252, 252);
+    --header-color: #f40606;
+    --header__link-color: black;
+    --header__icon-color: black;
+    /* cores banner */
+    --banner-color: white;
+    --banner_before-color: black;
+    --card-color: white;
+    --card__description-color: #555;
+    --card__price-color: #d9534f;
+    --card__title-color: #1a1a1a;
+    --button--small-bg: #f44336;
+    --button--small-color: #f1f1f1;
+    --category-item-bg: white;
+    --banner__bg-color: black;
+    
+
+    
+
+
+
+
+    
+
+
+    
+}
+
+
+
