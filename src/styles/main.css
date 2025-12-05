@@ -1,9 +1,256 @@
 .header__container{
     /* coloquei a cor no background*/
-    background-color: brown;
+    background-color: rgb(252, 252, 252);
     display: flex;
+    justify-content: space-between;   
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 20px;
+}
+.header__logo{
+    font-size: 30px;
+    color: #f40606;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.header__menu{
+    gap:20px;
+    display: flex;
+    justify-content: center;
+    list-style: none;
 
 }
 
+.header__link{
+    font-size: 17px;
+
+    color: #000000;
+    text-decoration: none;
+}
+
+.header__icon{
+    font-size: 17px;
+    font-family:'Times New Roman', Times, serif;
+    color: #000000;
+    text-decoration: none;
+}
+
+.header__toggle{
+  display: none;
+
+}
+
+
+/*--------------------------------------------luiza - banner --------------------------------------------*/
+
+.banner {
+  height: 320px;
+  width: 100%;
+  background-image: url('https://images.pexels.com/photos/12034622/pexels-photo-12034622.jpeg');
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  color: white;
+  position: relative; /* Necessário pro overlay */
+}
+
+/* Escurece a imagem */
+.banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0,0,0,0.5); 
+  /* 0.3 = mais claro | 0.5 = médio | 0.7 = bem escuro */
+}
+
+/*Mantém o texto na frente do overlay */
+.banner__content {
+  position: relative;
+  z-index: 1;
+}
+
+.banner__title {
+  font-size: 2.8rem;
+  font-family: 'Oswald', sans-serif;
+}
+
+.banner__title--highlight {
+  color: var(--primary-color);
+}
+
+.banner__subtitle {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+
+
+
+/* -----------------------------------------------pablo------------------------------------------------- */
+.products {
+  padding: 60px 20px;
+  background: #f6f9f4; /* cor de fundo semelhante ao da imagem */
+}
+
+/* Container */
+.products__container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.products__title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #0d2340; /* mais escuro, como na imagem */
+  
+}
+
+/* GRID */
+.products__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+}
+
+/* CARD */
+.card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden; /* para imagem colar nas bordas */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* Imagem */
+.card__image-wrapper {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+}
+
+.card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Corpo do card */
+.card__body {
+  padding: 20px;
+}
+
+.card__title {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: #1a1a1a;
+  font-weight: 700;
+}
+
+.card__description {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Footer */
+.card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card__price {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #d9534f;
+}
+
+/* Botão */
+.button--small {
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  background: #f44336;
+  color: #fff;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: opacity .2s;
+}
+
+.button--small:hover {
+  opacity: 0.8;
+}
+
+
+/* ----------------------------------------------lorena------------------------------------------------- */
+
+/* Espaçamento interno da seção */
+.categories {
+  padding: 40px 20px;
+}
+
+/* Título centralizado com tamanho maior */
+.categories__title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 25px;
+}
+
+/* Área onde ficam os cards (lado a lado, quebram linha, centralizados) */
+.categories__list {
+  display: flex; 
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Card individual: fundo branco, arredondado e com sombra */
+.category-item {
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+  width: 160px;
+}
+
+/* Imagem do card ocupando todo o espaço do card */
+.category-item__img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+
+/* ----------------------------------------footer------------------------------------------------------ */
+.footer{
+    background-color: #f40606;
+    display: flex;
+    justify-content: space-between;   
+    flex-wrap: wrap;
+    padding: 10px;
+    text-align: center;
+}
+
+.footer__text{
+    display: flex;
+    text-align: center;
+   
+}
+
+/*------------------------*/
 
 

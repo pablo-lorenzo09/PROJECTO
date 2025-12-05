@@ -2,13 +2,19 @@
     padding: 0;
     margin:0px;
     box-sizing:border-box;
+    list-style: none;
+    font-family: "Oswald";
+    
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
 
-
-
-
-
+img{
+  width: 300px;
+}
 
 
 
