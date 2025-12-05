@@ -1,20 +1,30 @@
 :root{
     /* cores header */
     --header__container-color: rgb(252, 252, 252);
+    --header__container-bg-color: rgb(252, 252, 252);
     --header-color: #f40606;
     --header__link-color: black;
     --header__icon-color: black;
     /* cores banner */
     --banner-color: white;
     --banner_before-color: black;
+    --banner__bg-color: black;
+    /*cores card*/
     --card-color: white;
     --card__description-color: #555;
     --card__price-color: #d9534f;
     --card__title-color: #1a1a1a;
+    /*cores button*/
     --button--small-bg: #f44336;
     --button--small-color: #f1f1f1;
+    /*cores category e footer*/
     --category-item-bg: white;
-    --banner__bg-color: black;
+    --footer-bg-color: #f40606;
+    /*cores product*/
+    --products-color: #f6f9f4;
+    --products__title-color: #0d2340;
+    
+
     
 
     

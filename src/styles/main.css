@@ -44,7 +44,7 @@
 /*--------------------------------------------luiza - banner --------------------------------------------*/
 
 .banner {
-  height: 320px;
+  height: 320px; /**/
   width: 100%;
   /*imagem de fundo*/
   background-image: url('https://images.pexels.com/photos/12034622/pexels-photo-12034622.jpeg');
@@ -75,22 +75,11 @@
 .banner::before {
   position: absolute;
   inset: 0;
-  /* inset: 0 → ocupa todo o espaço do banner */
+  /* inset: 0 ocupa todo o espaço do banner */
 
   background-color: var(--banner__bg-color);
   /* Camada preta transparente por cima da imagem
-     - 0.3 = mais claro
-     - 0.5 = médio
-     - 0.7 = bem escuro 
   */
-}
-
-
-/* Mantém o texto na frente do overlay */
-.banner__content {
-  position: relative;
-  z-index: 1;
-  /* Faz o texto ficar acima do escurecimento */
 }
 
 
@@ -117,7 +106,7 @@
 /* -----------------------------------------------pablo------------------------------------------------- */
 .products {
   padding: 60px 20px;
-  background: var() #f6f9f4; /* cor de fundo semelhante ao da imagem */
+  background: var(--products-color) ; /* cor de fundo semelhante ao da imagem */
 }
 
 .products__container {
@@ -129,7 +118,7 @@
   text-align: center;
   font-size: 2rem;
   margin-bottom: 40px;
-  color: #0d2340; /* mais escuro*/
+  color: var(--products__title-color); /* mais escuro*/
   
 }
 
@@ -142,7 +131,7 @@
 
 /* CARD */
 .card {
-  background: var(--card-color) #fff;
+  background: var(--card-color) ;
   border-radius: 12px;
   overflow: hidden; /* para imagem colar nas bordas */
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
@@ -198,7 +187,7 @@
 .card__price {
   font-weight: bold;
   font-size: 1.1rem;
-  color: var(--card__price-color) #d9534f;
+  color: var(--card__price-color) ;
 }
 
 
@@ -221,51 +210,48 @@
 
 /* ----------------------------------------------lorena------------------------------------------------- */
 
-/* Espaçamento interno da seção */
 .categories {
-  padding: 40px 20px;
+  padding: 40px 20px;             
 }
 
-/* Título centralizado com tamanho maior */
+/* Titulo da seção*/
 .categories__title {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 25px;
+  text-align: center;            
+  font-size: 2rem;                  
+  margin-bottom: 25px;             
 }
-
-/* Área onde ficam os cards (lado a lado, quebram linha, centralizados) */
+/* Área que contém os cards*/
 .categories__list {
-  display: flex; 
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  
+  display: flex;                   
+  justify-content: center;        
+  gap: 20px;                      
+  flex-wrap: wrap;                 
 }
 
-/* Card individual: fundo branco, arredondado e com sombra */
+
 .category-item {
-  background: var(--category-item-bg);
-  padding: 15px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  text-align: center;
-  width: 160px;
-  
+  background: var(--category-item-bg); 
+  padding: 15px;                      
+  border-radius: 12px;               
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
+  text-align: center;                 
+  width: 160px;                       
 }
 
-/* Imagem do card ocupando todo o espaço do card */
+
+/*A imagem do card*/
 .category-item__img {
-  width: 100%;
-  height: 120px;
-  border-radius: 10px;
-  margin-bottom: 10px;
-  object-fit: cover;
-   
+  width: 100%;                         
+  height: 120px;                      
+  border-radius: 10px;               
+  margin-bottom: 10px;               
+  object-fit: cover;                 
 }
+
 
 /* ----------------------------------------footer------------------------------------------------------ */
 .footer{
-    background-color: var() #f40606;
+    background-color: var(--footer-bg-color);
     justify-items: center;   
     padding: 10px;
 }

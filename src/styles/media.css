@@ -9,7 +9,7 @@
 @media(max-width: 600px){
 
     .header__container{
-    background-color: rgb(252, 252, 252);
+    background-color: var(--header__container-bg-color);
     display: flex;
     flex-direction: column;  /*alinhou os itens um embaixo do outro*/
     flex-wrap: wrap; /*quebrar linha*/
