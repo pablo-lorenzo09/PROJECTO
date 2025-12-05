@@ -1,21 +1,41 @@
+/* --------------------------------------------Pablo----------------------------------------------*/
 @media (max-width: 600px) {
   .products__grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; 
   }
 }
 
 
-/* --------------------------------------------------------------------------------------------- */
+
+
+
+
+/* ---------------------------------MEDIA DA JULIA MEXER  PFVV!!!------------------------------------------------------------ */
 @media(max-width: 600px){
-}
+
     .header__container{
     background-color: rgb(252, 252, 252);
     display: flex;
-    justify-content: space-between;   
-    flex-wrap: wrap;
-    align-items: center;
+    flex-direction: column;  /*alinhou os itens um embaixo do outro*/
+    flex-wrap: wrap; /*quebrar linha*/
+    align-items: center;/*afinhou os itens no meio*/
     padding: 15px;
+    width: 100%;
 }
-    .header__logo{
-        
+
+/*mesma coisa só que pro filho*/
+    .header__menu{
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
     }
+
+    .header__toggle{
+    display: flex;
+    position: absolute; /* liber */
+    top: 10px;          /* colocart no topo */
+    right: 10px;        /* levar pra direita */
+    }
+
+  }
+  
