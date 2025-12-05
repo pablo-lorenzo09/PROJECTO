@@ -15,10 +15,10 @@
 }
 
 .header__menu{
-    gap:20px;
+    gap:20px;/*distancia entre eles*/
     display: flex;
     justify-content: center;
-    list-style: none;
+    list-style: none;/*tira as bolinhas*/
 
 }
 
