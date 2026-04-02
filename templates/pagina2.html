@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block css_adicional %}
+<link rel="stylesheet" href="./static/produto.css">
+{% endblock %}
+
+{% block conteudo %}
+
+<div class="container">
+
+    <div class="product">
+
+        <!-- IMAGEM PRINCIPAL -->
+        <div class="product-img">
+            <img id="mainImg" src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=1200" alt="Hamburguer">
+            
+            <!-- MINI GALERIA -->
+            <div class="gallery">
+                <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=800" onclick="trocarImagem(this)">
+                
+                <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=800" onclick="trocarImagem(this)">
+                
+                <img src="https://images.unsplash.com/photo-1606755962773-d324e0a13086?q=80&w=800" onclick="trocarImagem(this)">
+            </div>
+        </div>
+
+        <!-- INFORMAÇÕES -->
+        <div class="product-info">
+            <h2>Hambúrguer Artesanal Premium 🍔</h2>
+
+            <p>
+                Um hambúrguer suculento com carne 180g, pão brioche,
+                queijo derretido, bacon crocante e molho especial da casa.
+                Experimente o sabor que vai mudar seu conceito de burger.
+            </p>
+
+            <div class="price">R$ 29,90</div>
+
+            <button class="btn">Comprar Agora</button>
+
+            <div class="stock">
+                🔴 Produto disponível por tempo limitado!
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+function trocarImagem(elemento) {
+    document.getElementById("mainImg").src = elemento.src;
+}
+</script>
+
+{% endblock %}
