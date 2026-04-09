@@ -7,7 +7,8 @@ def recuperar_hamburguers():
 
      
     cursor.execute('''SELECT hamburguers.codigo,hamburguers.produto,hamburguers.descricao,hamburguers.preco,hamburguers.destaque,hamburguers.foto,hamburguers.disponibilidade 
-                   FROM hamburguers;''')
+                   FROM hamburguers
+                   WHERE hamburguers.disponibilidade = 1;''')
 
     hamburguers=cursor.fetchall()
 
@@ -22,7 +23,7 @@ def recuperar_hamburguers_destaques():
      
     cursor.execute('''SELECT hamburguers.codigo,hamburguers.produto,hamburguers.descricao,hamburguers.preco,hamburguers.destaque,hamburguers.foto,hamburguers.disponibilidade 
                    FROM hamburguers
-                   WHERE hamburguers.destaque = 1
+                   WHERE hamburguers.destaque = 1 and hamburguers.disponibilidade = 1 
                    ;''')
 
     hamburguers=cursor.fetchall()
