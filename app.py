@@ -3,6 +3,7 @@ import mysql
 import mysql.connector
 from model.hamburguer import recuperar_hamburguers
 from model.hamburguer import recuperar_hamburguers_destaques
+from model.hamburguer import recuperar_produto
 
 app = Flask (__name__)
 
@@ -13,9 +14,11 @@ def pag_principal():
     hamburguers_destaque = recuperar_hamburguers_destaques()
     return render_template("index.html", hamburguers = hamburguers, hamburguers_destaque = hamburguers_destaque)
 
-@app.route("/pagina2")
-def pag_dois():
-    return render_template("pagina2.html")
+
+@app.route("/pagina2/<int:id>")
+def pag_dois(id):
+    lanche = recuperar_produto(id)
+    return render_template("produto.html", lanche = lanche)
 
 if __name__=="__main__":
     app.run(host="0.0.0.0",port=8080,debug=True)
