@@ -4,6 +4,7 @@ import mysql.connector
 from model.hamburguer import recuperar_hamburguers
 from model.hamburguer import recuperar_hamburguers_destaques
 from model.hamburguer import recuperar_produto
+from model.hamburguer import cadastrar
 
 app = Flask (__name__)
 
@@ -22,3 +23,16 @@ def pag_dois(id):
 
 if __name__=="__main__":
     app.run(host="0.0.0.0",port=8080,debug=True)
+
+
+
+@app.route("/cadastro")
+def tela_cadastro():
+    return render_template("cadastro.html")
+
+@app.route("/cadastro",methods=["POST"])
+def tela_cadastro_post():
+    nome = request.form.get("usuario")
+    senha = request.form.get("senha")
+    cadastrar(nome, senha)
+    return render_template("cadastro.html")
