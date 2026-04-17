@@ -47,16 +47,3 @@ def recuperar_produto(codigo: int):
     conexao.close()
     return hamburguers
 
-def cadastrar(nome, senha):
-    conexao,cursor = conectar()
-
-     
-    cursor.execute('''INSERT INTO Devburguer.usuarios (nome,senha)
-    VALUES
-    (%s,%s);''',(nome, senha))
-
-    conexao.commit()
-
-
-    conexao.close()
-    

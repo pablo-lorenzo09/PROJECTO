@@ -22,8 +22,9 @@ VALUES
 ("React Salad","Uma opção leve e reativa para o seu almoço.",27.00,1,"https://images.pexels.com/photos/1199957/pexels-photo-1199957.jpeg?auto=compress&cs=tinysrgb&w=600",1);
 
 create table if not exists usuarios (
-	nome VARCHAR(30) NOT NULL PRIMARY KEY,
-	senha VARCHAR(200)    
+	usuario VARCHAR(30) NOT NULL PRIMARY KEY,
+	senha VARCHAR(200) NOT NULL,    
+    nome VARCHAR (100) default "ANONIMO"
 );
 
 INSERT INTO Devburguer.usuarios (nome,senha)

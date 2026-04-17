@@ -1,0 +1,78 @@
+:root {
+    --header-color: #f40606;
+    --card__description-color: #555;
+    --card__title-color: #1a1a1a;
+    --button--small-bg: #f44336;
+    --button--small-color: #f1f1f1;
+    --products-color: #f6f9f4;
+}
+
+/* FUNDO */
+body {
+    background: var(--products-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+/* CARD LOGIN */
+.login-container {
+    background: white;
+    padding: 40px;
+    width: 350px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* TÍTULO */
+.login-container h2 {
+    color: var(--card__title-color);
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+}
+
+/* INPUTS */
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    font-size: 0.9rem;
+    color: var(--card__description-color);
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+/* BOTÃO */
+.btn {
+    width: 100%;
+    background: var(--button--small-bg);
+    color: var(--button--small-color);
+    border: none;
+    padding: 14px;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.03);
+}
+
+/* RESPONSIVO */
+@media (max-width: 400px) {
+    .login-container {
+        width: 90%;
+    }
+}
