@@ -8,6 +8,8 @@ from model.usuario import Usuario
 
 app = Flask (__name__)
 
+app.secret_key = "banana_verde"
+
 @app.route("/")
 @app.route("/home",methods=["GET"])
 def pag_principal():
