@@ -26,10 +26,55 @@
     {% endblock %}
   </head>
   <body>
+    <!--  -->
+    <!-- ASIDE DO CARRINHO - SIDEBAR -->
+<aside class="cart-sidebar" id="cartSidebar">
+    <div class="cart-sidebar__overlay" id="cartOverlay"></div>
+    <div class="cart-sidebar__container">
+        <div class="cart-sidebar__header">
+            <h2 class="cart-sidebar__title">
+                <span class="material-symbols-outlined">shopping_cart</span>
+                Meu Carrinho
+            </h2>
+            <button class="cart-sidebar__close" id="closeCartBtn">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+        
+        <div class="cart-sidebar__content" id="cartContent">
+            <!-- Itens do carrinho serão inseridos dinamicamente aqui -->
+            <div class="cart-empty">
+                <span class="material-symbols-outlined">shopping_bag</span>
+                <p>Seu carrinho está vazio</p>
+                <button class="cart-empty__btn" id="goToMenuBtn">Ver Cardápio</button>
+            </div>
+        </div>
+        
+        <div class="cart-sidebar__footer">
+            <div class="cart-sidebar__subtotal">
+                <span>Subtotal</span>
+                <span id="cartSubtotal">R$ 0,00</span>
+            </div>
+            <div class="cart-sidebar__total">
+                <span>Total</span>
+                <span id="cartTotal">R$ 0,00</span>
+            </div>
+            <button class="cart-sidebar__checkout" id="checkoutBtn">
+                Finalizar Pedido
+            </button>
+        </div>
+    </div>
+</aside>
 
+<!-- Botão flutuante do carrinho (para abrir o aside) -->
+<button class="cart-floating-btn" id="openCartBtn">
+    <span class="material-symbols-outlined">shopping_cart</span>
+    <span class="cart-floating-btn__badge" id="cartBadge">0</span>
+</button>
   <!-- Header e Navbar: Jolia-->
     <header class="header">
       <div class="header__container">
+        <!--  -->
         <a href="#" class="header__logo">DevBurger</a>
 
         <nav class="header__nav">
@@ -75,4 +120,44 @@
       </p>
     </footer>
   </body>
+  <script>
+    // Controle de visibilidade do aside (carrinho)
+document.addEventListener('DOMContentLoaded', function() {
+    // Elementos do DOM
+    const cartSidebar = document.getElementById('cartSidebar');
+    const openCartBtn = document.getElementById('openCartBtn');
+    const closeCartBtn = document.getElementById('closeCartBtn');
+    const cartOverlay = document.getElementById('cartOverlay');
+
+    // Verifica se todos os elementos existem antes de prosseguir
+    if (!cartSidebar || !openCartBtn || !closeCartBtn || !cartOverlay) {
+        console.warn('Elementos do carrinho não encontrados no DOM');
+        return;
+    }
+
+    // Função para abrir o aside
+    function openCart() {
+        cartSidebar.classList.add('cart-sidebar--open');
+        document.body.style.overflow = 'hidden'; // Impede rolagem da página
+    }
+
+    // Função para fechar o aside
+    function closeCart() {
+        cartSidebar.classList.remove('cart-sidebar--open');
+        document.body.style.overflow = ''; // Restaura rolagem
+    }
+
+    // Eventos
+    openCartBtn.addEventListener('click', openCart);
+    closeCartBtn.addEventListener('click', closeCart);
+    cartOverlay.addEventListener('click', closeCart);
+
+    // Fechar ao pressionar a tecla ESC
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape' && cartSidebar.classList.contains('cart-sidebar--open')) {
+            closeCart();
+        }
+    });
+});
+  </script>
 </html>
