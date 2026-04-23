@@ -22,6 +22,9 @@
     <link rel="stylesheet" href="/static/main.css" />
     <link rel="stylesheet" href="/static/media.css" />
     <link rel="stylesheet" href="/static/produto.css">
+
+    <script src="/static/src/js/carrinho.js"></script>
+
     {% block css_adicional %} 
     {% endblock %}
   </head>
@@ -42,13 +45,18 @@
         </div>
         
         <div class="cart-sidebar__content" id="cartContent">
-            <!-- Itens do carrinho serão inseridos dinamicamente aqui -->
-            <div class="cart-empty">
-                <span class="material-symbols-outlined">shopping_bag</span>
-                <p>Seu carrinho está vazio</p>
-                <button class="cart-empty__btn" id="goToMenuBtn">Ver Cardápio</button>
-            </div>
+    <!-- Item de exemplo do carrinho -->
+    <div class="cart-item" id="carrinho">
+        <img src="${dado.imagem}" alt="Hambúrguer" class="cart-item__image">
+        <div class="cart-item__info">
+            <div class="cart-item__title">${dado.nome}</div>
+            <div class="cart-item__price">${dado.preco}</div>
+            <div class="cart-item__description">Pão, hambúrguer 180g, queijo, bacon, alface, tomate e molho especial.</div>
         </div>
+    </div>
+    
+    </div>
+</div>
         
         <div class="cart-sidebar__footer">
             <div class="cart-sidebar__subtotal">
