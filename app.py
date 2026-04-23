@@ -36,5 +36,22 @@ def tela_cadastro_post():
 
     return redirect("/")
 
+@app.route("/login")
+def logar_usuario():
+    return render_template("login.html")
+
+@app.route("/login/post", methods=["POST"])
+def logar_usuario_post():
+    usuario = request.form.get("nome_usuario")
+    senha = request.form.get("senha")
+
+    resultado = Usuario.logar(usuario, senha)
+
+    if not resultado:
+        session["usuario_logado"] = resultado
+
+    return redirect("/")
+
+
 if __name__=="__main__":
     app.run(host="0.0.0.0",port=8080,debug=True)

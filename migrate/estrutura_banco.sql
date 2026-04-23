@@ -27,8 +27,10 @@ create table if not exists usuarios (
     nome VARCHAR (100) default "ANONIMO"
 );
 
-INSERT INTO Devburguer.usuarios (usuario,senha,nome)
+INSERT INTO Devburguer.usuarios (usuario,senha)
 VALUES
-("pablorei","melmelmelsahur","Pablo Lorenzo")
+("pablorei","melmelmelsahur")
 
 select * from usuarios
+
+SELECT * FROM usuarios WHERE usuario = Pablo and senha = fgdgdfgdgd;
