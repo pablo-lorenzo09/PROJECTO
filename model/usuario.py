@@ -9,9 +9,9 @@ class Usuario:
     def cadastrar(self):
         conexao,cursor = conectar()
 
-        cursor.execute('''INSERT INTO Devburguer.usuarios (nome,senha,nome)
+        cursor.execute('''INSERT INTO Devburguer.usuarios (usuario,senha,nome)
         VALUES(%s, %s, %s);
-        (%s,%s);''',[self.usuario, self.senha, self.nome])
+        ''',[self.usuario, self.senha, self.nome])
 
         conexao.commit()
         conexao.close()
