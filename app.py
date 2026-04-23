@@ -25,7 +25,7 @@ def pag_dois(id):
 def tela_cadastro():
     return render_template("cadastro.html")
 
-@app.route("/cadastro", methods=["POST"])
+@app.route("/cadastro/post", methods=["POST"])
 def tela_cadastro_post():
     usuario = request.form.get("nome_usuario")
     senha = request.form.get("senha")
