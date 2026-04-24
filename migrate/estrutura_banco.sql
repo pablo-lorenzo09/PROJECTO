@@ -21,6 +21,9 @@ VALUES
 ("Python Onion","Anéis de cebola, barbecue e queijo cheddar.",33.00,1,"https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg?auto=compress&cs=tinysrgb&w=600",1),
 ("React Salad","Uma opção leve e reativa para o seu almoço.",27.00,1,"https://images.pexels.com/photos/1199957/pexels-photo-1199957.jpeg?auto=compress&cs=tinysrgb&w=600",1);
 
+
+
+
 create table if not exists usuarios (
 	usuario VARCHAR(30) NOT NULL PRIMARY KEY,
 	senha VARCHAR(200) NOT NULL,    
@@ -29,8 +32,13 @@ create table if not exists usuarios (
 
 INSERT INTO Devburguer.usuarios (usuario,senha)
 VALUES
-("pablorei","melmelmelsahur")
+("pablorei","melmelmelsahur");
 
-select * from usuarios
-
-SELECT * FROM usuarios WHERE usuario = Pablo and senha = fgdgdfgdgd;
+create table if not exists carrinho (
+	cod_carrinho int auto_increment primary key,
+    usuario varchar(20),
+    date datetime default CURDATE(),
+    finalizado bool,
+    CONSTRAINT fk_carrinho_usuario FOREIGN KEY usuario references usuarios(usuario)
+    
+);
