@@ -17,6 +17,9 @@ VALUES
 
 INSERT INTO `devburguer`.`carrinhos` (`usuario`) VALUES ('pablorei');
 
+INSERT INTO `devburguer`.`itens_carrinhos` (`cod_carrinho`, `cod_produto`, `quantidade`) VALUES ('1', '2', '2');
+INSERT INTO `devburguer`.`itens_carrinhos` (`cod_carrinho`, `cod_produto`, `quantidade`) VALUES ('2', '3', '3');
+INSERT INTO `devburguer`.`itens_carrinhos` (`cod_carrinho`, `cod_produto`, `quantidade`) VALUES ('3', '1', '1');
 
 
 CREATE TABLE IF NOT EXISTS hamburguers (
