@@ -34,11 +34,20 @@ INSERT INTO Devburguer.usuarios (usuario,senha)
 VALUES
 ("pablorei","melmelmelsahur");
 
-create table if not exists carrinho (
+create table if not exists carrinhos (
 	cod_carrinho int auto_increment primary key,
     usuario varchar(20),
-    date datetime default CURDATE(),
+    date datetime default current_timestamp(),
     finalizado bool,
-    CONSTRAINT fk_carrinho_usuario FOREIGN KEY usuario references usuarios(usuario)
+    CONSTRAINT fk_carrinho_usuario FOREIGN KEY (usuario) references usuarios(usuario)
     
+);
+
+create table if not exists itens_carrinhos (
+	cod_item_carrinho int auto_increment,
+    cod_carrinho int,
+    cod_produto int,
+    quantidade int default 1,
+    CONSTRAINT fk_itenscarrinho_carrinhos foreign key (cod_carrinho) references carrinhos(cod_carrinho),
+    constraint fk_itenscarinho_itens foreign key (cod_produto) references itens(codigo)
 );
