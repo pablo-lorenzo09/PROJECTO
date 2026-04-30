@@ -50,7 +50,7 @@ def logar_usuario_post():
 
     resultado = Usuario.logar(usuario, senha)
 
-    if not resultado:
+    if resultado:
         session["usuario_logado"] = resultado
 
     return redirect("/")
