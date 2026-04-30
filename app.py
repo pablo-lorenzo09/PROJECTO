@@ -1,10 +1,11 @@
-from flask import Flask, render_template, request, redirect, session, flash
+from flask import Flask, render_template, request, redirect, session, flash, jsonify
 import mysql
 import mysql.connector
 from model.hamburguer import recuperar_hamburguers
 from model.hamburguer import recuperar_hamburguers_destaques
 from model.hamburguer import recuperar_produto
 from model.usuario import Usuario
+from model.carrinho import recuperar_carrinho
 
 app = Flask (__name__)
 
@@ -54,6 +55,13 @@ def logar_usuario_post():
 
     return redirect("/")
 
-
+@app.route("/api/get/carrinho", methods = ["GET"])
+def api_get_carrinho():
+    if "usuario_logado" in session:
+        carrinho = recuperar_carrinho(session["usuario_logado"])
+        return jsonify(carrinho), 200
+    else: 
+        return jsonify({"message":"Usuário não logado"}), 401
+    
 if __name__=="__main__":
     app.run(host="0.0.0.0",port=8080,debug=True)

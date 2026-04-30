@@ -17,9 +17,9 @@ VALUES
 
 INSERT INTO `devburguer`.`carrinhos` (`usuario`) VALUES ('pablorei');
 
-INSERT INTO `devburguer`.`itens_carrinhos` (`cod_carrinho`, `cod_produto`, `quantidade`) VALUES ('1', '2', '2');
-INSERT INTO `devburguer`.`itens_carrinhos` (`cod_carrinho`, `cod_produto`, `quantidade`) VALUES ('2', '3', '3');
-INSERT INTO `devburguer`.`itens_carrinhos` (`cod_carrinho`, `cod_produto`, `quantidade`) VALUES ('3', '1', '1');
+INSERT INTO `devburguer`.`itens_carrinho` (`cod_carrinho`, `cod_produto`, `quantidade`) VALUES ('1', '2', '2');
+INSERT INTO `devburguer`.`itens_carrinho` (`cod_carrinho`, `cod_produto`, `quantidade`) VALUES ('2', '3', '3');
+INSERT INTO `devburguer`.`itens_carrinho` (`cod_carrinho`, `cod_produto`, `quantidade`) VALUES ('3', '1', '1');
 
 
 CREATE TABLE IF NOT EXISTS hamburguers (
@@ -48,7 +48,7 @@ create table if not exists carrinhos (
     
 );
 
-create table if not exists itens_carrinhos (
+create table if not exists itens_carrinho (
     cod_item_carrinho int auto_increment primary key, 
     cod_carrinho int,
     cod_produto int,
@@ -56,3 +56,20 @@ create table if not exists itens_carrinhos (
     CONSTRAINT fk_itenscarrinho_carrinhos foreign key (cod_carrinho) references carrinhos(cod_carrinho),
     constraint fk_itenscarinho_itens foreign key (cod_produto) references hamburguers(codigo)
 );
+
+SELECT carrinhos.cod_carrinho,
+       carrinhos.usuario,
+       carrinhos.date,
+       carrinhos.finalizado,
+       hamburguers.produto,
+       itens_carrinho.quantidade,
+       hamburguers.preco,
+       hamburguers.foto
+        FROM carrinhos
+        INNER JOIN itens_carrinho ON carrinhos.cod_carrinho = itens_carrinho.cod_carrinho
+        INNER JOIN hamburguers ON hamburguers.codigo = itens_carrinho.cod_produto
+        WHERE carrinhos.usuario = "pablorei"
+        
+
+
+
