@@ -52,14 +52,16 @@ def logar_usuario_post():
 
     if resultado:
         session["usuario_logado"] = resultado
-
+        print("RESULTADO LOGIN:", resultado)
+        print("TIPO:", type(resultado))
     return redirect("/")
-
+    
 @app.route("/api/get/carrinho", methods = ["GET"])
 def api_get_carrinho():
     if "usuario_logado" in session:
-        carrinho = recuperar_carrinho(session["usuario_logado"])
-        return jsonify(carrinho), 200
+        print(session["usuario_logado"])
+
+        return jsonify(recuperar_carrinho(session["usuario_logado"]["usuario"])), 200
     else: 
         return jsonify({"message":"Usuário não logado"}), 401
     
