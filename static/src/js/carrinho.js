@@ -15,14 +15,17 @@ async function mostrar_carrinho(){
             <img src="${dado.foto}" alt="Hambúrguer" class="cart-item__image">
         <div class="cart-item__info">
             <div class="cart-item__title">${dado.produto}</div>
-            <div class="cart-item__price">${dado.preco}</div>
+            <div class="cart-item__price">${dado.preco}.00</div>
             <div class="cart-item__description">Pão, hambúrguer 180g, queijo, bacon, alface, tomate e molho especial.</div>
         </div>
         </div>
         `
         carrinho.innerHTML += linha;
+        precototal = 0
+        precototal += dado.preco
         };
-    
+        subtotal = document.getElementById("cartSubtotal")
+        subtotal.innerHTML = `R$ ${precototal},00`
     };
 };
 
