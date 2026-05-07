@@ -74,6 +74,6 @@ VALUES
 (1, 1, 2), -- 2 Classic Devs no carrinho 1
 (1, 5, 1); -- 1 Python Onion no carrinho 1
 
-
+select * from itens_carrinho
 
 

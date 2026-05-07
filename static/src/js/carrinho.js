@@ -1,3 +1,5 @@
+const cartBadge = document.querySelector('#cartBadge')
+
 async function mostrar_carrinho(){
     const resposta = await fetch("http://10.110.134.31:8080/api/get/carrinho")
 
@@ -21,6 +23,7 @@ async function mostrar_carrinho(){
         </div>
         `
         carrinho.innerHTML += linha;
+        // cartBadge.innerText += 1
         precototal = 0
         precototal += dado.preco
         };
