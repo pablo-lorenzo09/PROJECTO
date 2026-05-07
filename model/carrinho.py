@@ -42,4 +42,12 @@ def inserir_item(usuario,cod_item,quantidade=1):
         
         codigo_carrinho = cursor.lastrowid()
 
+    cursor.execute("""
+                    INSERT INTO itens_carrinho 
+                        (cod_carrinho, cod_produto, quantidade)
+                    VALUES 
+                        (%s,%s,%s);
+                   """,[codigo_carrinho,cod_item,quantidade])
+    
+    conexao.commit()
     conexao.close()
