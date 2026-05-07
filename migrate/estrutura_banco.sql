@@ -38,18 +38,6 @@ create table if not exists itens_carrinho (
     constraint fk_itenscarinho_itens foreign key (cod_produto) references hamburguers(codigo)
 );
 
-SELECT carrinhos.cod_carrinho,
-       carrinhos.usuario,
-       carrinhos.date,
-       carrinhos.finalizado,
-       hamburguers.produto,
-       itens_carrinho.quantidade,
-       hamburguers.preco,
-       hamburguers.foto
-        FROM carrinhos
-        INNER JOIN itens_carrinho ON carrinhos.cod_carrinho = itens_carrinho.cod_carrinho
-        INNER JOIN hamburguers ON hamburguers.codigo = itens_carrinho.cod_produto
-        WHERE carrinhos.usuario = "pablorei";
         
 
 
@@ -74,6 +62,24 @@ VALUES
 (1, 1, 2), -- 2 Classic Devs no carrinho 1
 (1, 5, 1); -- 1 Python Onion no carrinho 1
 
+SELECT carrinhos.cod_carrinho,
+       carrinhos.usuario,
+       carrinhos.date,
+       carrinhos.finalizado,
+       hamburguers.produto,
+       itens_carrinho.quantidade,
+       hamburguers.preco,
+       hamburguers.foto
+        FROM carrinhos
+        INNER JOIN itens_carrinho ON carrinhos.cod_carrinho = itens_carrinho.cod_carrinho
+        INNER JOIN hamburguers ON hamburguers.codigo = itens_carrinho.cod_produto
+        WHERE carrinhos.usuario = "pablorei";
+
+SELECT cod_carrinho from carrinhos
+        WHERE usuario = "pablorei"
+        AND finalizado = 0
+        limit 1;
+
 select * from itens_carrinho
 
-
+select * from usuarios
