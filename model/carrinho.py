@@ -40,7 +40,7 @@ def inserir_item(usuario,cod_item,quantidade=1):
                     VALUES (%s);
                    """,[usuario])
         
-        codigo_carrinho = cursor.lastrowid()
+        codigo_carrinho = cursor.lastrowid
 
     cursor.execute("""
                     INSERT INTO itens_carrinho 
