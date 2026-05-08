@@ -542,6 +542,30 @@
     font-weight: 700;
 }
 
+button.cart-item__delete {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+    color: #999;
+}
+
+button.cart-item__delete:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+button.cart-item__delete:hover {
+    background-color: #f5f5f5;
+    color: #e44d3a;
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
     .cart-sidebar__container {
@@ -555,3 +579,4 @@
         height: 48px;
     }
 }
+
