@@ -1,7 +1,7 @@
 const cartBadge = document.querySelector('#cartBadge')
 
 async function mostrar_carrinho(){
-    const resposta = await fetch("http://10.110.134.31:8080/api/get/carrinho")
+    const resposta = await fetch("http://10.110.134.39:8080/api/get/carrinho")
 
     if (!resposta.ok) {
         alert("ERRO AO CARREGAR CARRINHO!")
@@ -10,6 +10,7 @@ async function mostrar_carrinho(){
         const dados = await resposta.json()
 
         const carrinho = document.getElementById("carrinho")
+        carrinho.innerHTML = ""
 
         for (let dado of dados){
             let linha = `    
@@ -34,7 +35,7 @@ async function mostrar_carrinho(){
 
 mostrar_carrinho();
 
-async function inserirItemCarrinho(cod_produto, quantidade) {
+async function inserirItemCarrinho(cod_produto, quantidade=1) {
     const resposta = await fetch("/api/post/item_carrinho",
                                     {
                                         method:"POST",
@@ -55,5 +56,5 @@ async function inserirItemCarrinho(cod_produto, quantidade) {
         alert("Erro ao inserir item!")
     }
 
-    mostrarCarrinho();
+    mostrar_carrinho();
 }

@@ -80,6 +80,4 @@ SELECT cod_carrinho from carrinhos
         AND finalizado = 0
         limit 1;
 
-select * from itens_carrinho
 
-select * from usuarios
