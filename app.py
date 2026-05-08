@@ -7,7 +7,7 @@ from model.hamburguer import recuperar_produto
 from model.usuario import Usuario
 from model.carrinho import recuperar_carrinho
 from model.carrinho import inserir_item
-
+from model.carrinho import deletar_item
 
 app = Flask (__name__)
 
@@ -80,6 +80,11 @@ def api_post_item_carrinho():
     else:
         return redirect("/login")
     
+@app.route("/home/delete/<int:id>")
+def deletar(id):
+    deletar_item(id)
+    return redirect("/home")
+
 
 if __name__=="__main__":
     app.run(host="0.0.0.0",port=8080,debug=True)

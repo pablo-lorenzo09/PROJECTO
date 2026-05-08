@@ -51,3 +51,17 @@ def inserir_item(usuario,cod_item,quantidade=1):
     
     conexao.commit()
     conexao.close()
+
+
+
+def deletar_item(id:int) -> bool:
+
+    conexao,cursor = conectar()
+
+     
+    cursor.execute('''DELETE FROM itens_carrinho WHERE cod_produto = %s LIMIT = 1''',(id,))
+
+
+
+    conexao.commit()
+    conexao.close()
